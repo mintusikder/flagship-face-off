@@ -5,6 +5,7 @@ import Root from "../root/Root";
 import Favorites from "../pages/Favorites";
 import About from "../pages/About";
 import ErrorPages from "../pages/ErrorPages";
+import PhoneDetails from "../pages/PhoneDetails";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         Component: About,
+      },
+      {
+        path: "/phone-details",
+        Component: PhoneDetails,
       },
     ],
   },
