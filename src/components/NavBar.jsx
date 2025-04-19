@@ -1,20 +1,50 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
-
+import { IoMdCart } from "react-icons/io";
+import { MdBookmarkAdd } from "react-icons/md";
 const NavBar = () => {
   const nav = (
     <>
       <li>
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-indigo-600 underline" : ""
+          }
+          to={"/"}
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/about"}>About</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-indigo-600 underline" : ""
+          }
+          to={"/about"}
+        >
+          About
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-indigo-600 underline" : ""
+          }
+          to={"/cart"}
+        >
+          <IoMdCart size={20} />
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/favorites"}>Favorites</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/cart"}>Cart</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-indigo-600 underline" : ""
+          }
+          to={"/favorites"}
+        >
+          <MdBookmarkAdd size={20} />
+        </NavLink>
       </li>
     </>
   );
@@ -22,7 +52,11 @@ const NavBar = () => {
     <div className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className="cursor-pointer mr-2 lg:hidden"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -53,7 +87,6 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex"></div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{nav}</ul>
-        <a className="btn">Button</a>
       </div>
     </div>
   );
