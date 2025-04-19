@@ -1,14 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
 
-import {
-  RouterProvider,
-} from "react-router";
-import { router } from './routes/Routes.jsx';
+import { RouterProvider } from "react-router";
+import { router } from "./routes/Routes.jsx";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
- <RouterProvider router={router} />
-  </StrictMode>,
-)
+    <div className="max-w-7xl mx-auto">
+    <RouterProvider router={router} />
+    </div>
+  </StrictMode>
+);
