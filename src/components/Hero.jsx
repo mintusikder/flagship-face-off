@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import bannerImg from "../assets/banner.png";
 
-const Hero = () => {
+const Hero = ({ handelSearch }) => {
+  const [search, setSearch] = useState("");
+
   return (
     <div className="py-12 px-4">
       <div className="flex items-center justify-center">
@@ -19,7 +21,13 @@ const Hero = () => {
         phones
         <br /> of the current time - FlagshipFaceOff
       </p>
-      <form className="md:flex items-center justify-center gap-2 max-w-2xl mx-auto">
+      <form
+        onSubmit={(e) => {
+            handelSearch(e, search),
+            setSearch("")
+        }}
+        className="md:flex items-center justify-center gap-2 max-w-2xl mx-auto"
+      >
         <div className="flex items-center shadow-md border border-gray-300 w-full rounded-lg">
           <svg
             className="h-5 w-5 ml-3 opacity-50"
@@ -37,8 +45,11 @@ const Hero = () => {
               <path d="m21 21-4.3-4.3"></path>
             </g>
           </svg>
+
           <input
             type="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             required
             placeholder="Search phones..."
             className="w-full py-3 px-3 focus:outline-none rounded-lg"

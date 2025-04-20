@@ -22,7 +22,7 @@ const PhonesContainer = ({ phones }) => {
         <button
           onClick={() => {
             setShowAll(!showAll);
-            if (showAll) window.scroll(0, 0);
+            if (showAll) window.scroll(0, 500);
           }}
           href="#_"
           className="relative inline-block text-lg group"
