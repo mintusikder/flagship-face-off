@@ -18,7 +18,6 @@ const Home = () => {
         pho.brand?.toLowerCase().split(" ").includes(text.toLowerCase())
     );
     setPhone(searchPhone);
-    console.log(searchPhone);
   };
 
   return (
